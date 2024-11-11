@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     this.authService.login(this.credentials).subscribe(()=>{
-      this.router.navigate(['/']);
+      this.router.navigate(['/dashboard/users']);
     },
       error => {
         console.error('login error : ' , error);
