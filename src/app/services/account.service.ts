@@ -50,6 +50,6 @@ export class AccountService {
 
   deleteAccount(accountId: number): Observable<void> {
     const headers = this.getToken();
-    return this.http.delete<void>(`${this.accountsApiUrl}/${accountId}`, { headers });
+    return this.http.delete<void>(`${this.accountsApiUrl}/${accountId}`, { headers ,responseType: 'text' as 'json'  });
   }
 }

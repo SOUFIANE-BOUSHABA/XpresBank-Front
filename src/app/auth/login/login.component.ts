@@ -10,7 +10,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   templateUrl: './login.component.html',
 })
 export class LoginComponent implements OnInit {
+
+
   credentials = { username: '', password: '' };
+
+
+
   constructor(private authService : AuthService , private router: Router) { }
 
   ngOnInit(): void {
