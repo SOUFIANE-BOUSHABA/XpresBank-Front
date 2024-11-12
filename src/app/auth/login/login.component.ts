@@ -8,7 +8,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   standalone: true,
   imports: [FormsModule ,ReactiveFormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit {
   credentials = { username: '', password: '' };

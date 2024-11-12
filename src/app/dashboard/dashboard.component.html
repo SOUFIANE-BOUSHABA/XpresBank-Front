@@ -1,10 +1,9 @@
-
 <div class="min-h-screen flex">
-  <app-sidebar class="w-1/5"></app-sidebar>
+  <app-sidebar class="w-1/5 sticky top-0 h-screen"></app-sidebar>
 
-  <div class="w-4/5 flex flex-col">
-    <app-header ></app-header>
-    <main class="flex-1 p-6 bg-gray-100">
+  <div class="w-4/5 flex flex-col ml-1/5">
+    <app-header class="shadow z-10 sticky top-0 w-full"></app-header>
+    <main class="flex-1 p-6 bg-gray-100 overflow-auto">
       <router-outlet></router-outlet>
     </main>
   </div>

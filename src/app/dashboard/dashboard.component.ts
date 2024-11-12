@@ -15,7 +15,7 @@ import { HeaderComponent } from '../shared/header/header.component';
     HeaderComponent
   ],
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: []
 })
 export class DashboardComponent {
 

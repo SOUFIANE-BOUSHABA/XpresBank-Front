@@ -1,0 +1,65 @@
+
+<div class="bg-white rounded-lg shadow-md p-6 max-w-2xl mx-auto">
+  <h2 class="text-2xl font-bold mb-6">Create User</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <div>
+        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+        <input formControlName="username" type="text" id="username" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+      </div>
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input formControlName="password" type="password" id="password" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input formControlName="email" type="email" id="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+      </div>
+      <div>
+        <label for="role" class="block text-sm font-medium text-gray-700">Role</label>
+        <input formControlName="role" type="text" id="role" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <div>
+        <label for="active" class="block text-sm font-medium text-gray-700">Active</label>
+        <input formControlName="active" type="checkbox" id="active" class="mt-1">
+      </div>
+      <div>
+        <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
+        <input formControlName="age" type="number" id="age" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <div>
+        <label for="monthlyIncome" class="block text-sm font-medium text-gray-700">Monthly Income</label>
+        <input formControlName="monthlyIncome" type="number" id="monthlyIncome" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+      </div>
+      <div>
+        <label for="creditScore" class="block text-sm font-medium text-gray-700">Credit Score</label>
+        <input formControlName="creditScore" type="number" id="creditScore" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <div>
+        <label for="debtToIncomeRatio" class="block text-sm font-medium text-gray-700">Debt to Income Ratio</label>
+        <input formControlName="debtToIncomeRatio" type="number" id="debtToIncomeRatio" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+      </div>
+      <div>
+        <label for="bankingDuration" class="block text-sm font-medium text-gray-700">Banking Duration</label>
+        <input formControlName="bankingDuration" type="number" id="bankingDuration" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+      </div>
+    </div>
+
+    <div class="flex justify-end">
+      <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Create User</button>
+    </div>
+  </form>
+</div>

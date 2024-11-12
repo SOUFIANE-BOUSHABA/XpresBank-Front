@@ -7,7 +7,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   standalone: true,
   imports: [RouterOutlet, RouterLink , ReactiveFormsModule , FormsModule  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'XpresBank-Front';
