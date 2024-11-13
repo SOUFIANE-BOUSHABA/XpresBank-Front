@@ -46,14 +46,19 @@ export class SelectTypeComponent implements OnInit {
     if (this.transactionForm.valid) {
       const formValue = this.transactionForm.value;
 
-      const transaction: Transaction = {
+      const transaction: any = {
         sourceAccountNumber: formValue.sourceAccountNumber,
         destinationAccountNumber: formValue.destinationAccountNumber,
         amount: formValue.amount,
         type: formValue.transactionType,
-        nextScheduledDate: formValue.nextScheduledDate ? formValue.nextScheduledDate : null,
-        frequency: formValue.frequency ? formValue.frequency : null,
       };
+
+      if (formValue.transactionType === 'SCHEDULED') {
+        transaction.nextScheduledDate = formValue.nextScheduledDate;
+        transaction.frequency = formValue.frequency;
+      }
+
+      console.log('Transaction to be created:', transaction);
 
       this.transactionService.createTransaction(transaction).subscribe(
         (response) => {
@@ -69,4 +74,5 @@ export class SelectTypeComponent implements OnInit {
       console.error('Form is invalid. Please check the required fields.');
     }
   }
+
 }
