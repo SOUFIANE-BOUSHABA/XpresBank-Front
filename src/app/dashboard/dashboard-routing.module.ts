@@ -9,6 +9,9 @@ import {AccountsComponent} from './account/accounts.component';
 import {CreditRequestsComponent} from './credit-requests/credit-requests.component';
 import {AccountsUserComponent} from './userViews/account/read/read.component';
 import {CreateAccountComponent} from './userViews/account/create/create.component';
+import {ReadComponent} from './userViews/transactions/read/read.component';
+import {CreateTransactionComponent} from './userViews/transactions/create/create.component';
+import {SelectTypeComponent} from './userViews/transactions/create/formulaire/select-type.component';
 
 const routes: Routes = [
   {
@@ -21,7 +24,11 @@ const routes: Routes = [
       { path: 'account', component: AccountsComponent },
       { path: 'credit-requests', component: CreditRequestsComponent },
       { path: 'account-for-user', component: AccountsUserComponent },
-      { path: 'account-user/create', component: CreateAccountComponent }
+      { path: 'account-user/create', component: CreateAccountComponent },
+      { path: 'transaction-user', component: ReadComponent },
+      { path: 'transaction/create', component: CreateTransactionComponent },
+      { path: 'transaction/create/select-type', component: SelectTypeComponent },
+
 
     ]
   }

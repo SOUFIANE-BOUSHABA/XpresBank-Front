@@ -1,0 +1,78 @@
+<div class="bg-white rounded-lg shadow-md p-6 max-w-4xl mx-auto mt-10">
+  <h2 class="text-2xl font-bold mb-6 text-left">Select Transaction Type</h2>
+
+  <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+    <div class="mb-6">
+      <label class="block text-sm font-medium text-gray-700 mb-2">Transaction Type</label>
+      <div class="flex items-center space-x-6">
+        <div class="flex items-center">
+          <input type="radio" id="classic" name="transactionType" value="CLASSIC"
+                 formControlName="transactionType" (change)="onTransactionTypeChange('CLASSIC')"
+                 class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+          <label for="classic" class="ml-2 block text-sm text-gray-900">Classic</label>
+        </div>
+        <div class="flex items-center">
+          <input type="radio" id="instant" name="transactionType" value="INSTANT"
+                 formControlName="transactionType" (change)="onTransactionTypeChange('INSTANT')"
+                 class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+          <label for="instant" class="ml-2 block text-sm text-gray-900">Instant</label>
+        </div>
+        <div class="flex items-center">
+          <input type="radio" id="scheduled" name="transactionType" value="SCHEDULED"
+                 formControlName="transactionType" (change)="onTransactionTypeChange('SCHEDULED')"
+                 class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+          <label for="scheduled" class="ml-2 block text-sm text-gray-900">Scheduled</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Classic/Instant Transaction Form -->
+    <div *ngIf="transactionType === 'CLASSIC' || transactionType === 'INSTANT'" class="mt-6">
+      <h3 class="text-xl font-semibold mb-4">Classic/Instant Transaction Form</h3>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Source Account Number</label>
+        <input formControlName="sourceAccountNumber" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Destination Account Number</label>
+        <input formControlName="destinationAccountNumber" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Amount</label>
+        <input formControlName="amount" type="number" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+      </div>
+    </div>
+
+    <!-- Scheduled Transaction Form -->
+    <div *ngIf="transactionType === 'SCHEDULED'" class="mt-6">
+      <h3 class="text-xl font-semibold mb-4">Scheduled Transaction Form</h3>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Source Account Number</label>
+        <input formControlName="sourceAccountNumber" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Destination Account Number</label>
+        <input formControlName="destinationAccountNumber" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Amount</label>
+        <input formControlName="amount" type="number" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Next Scheduled Date</label>
+        <input formControlName="nextScheduledDate" type="date" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Frequency</label>
+        <select formControlName="frequency" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+          <option value="WEEKLY">Weekly</option>
+          <option value="MONTHLY">Monthly</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="flex justify-end mt-6">
+      <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Submit</button>
+    </div>
+  </form>
+</div>
