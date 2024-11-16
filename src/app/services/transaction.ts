@@ -38,12 +38,22 @@ export class TransactionService {
   }
 
 
+  rejectTransaction(transactionId: number): Observable<Transaction> {
+    const headers = this.getToken();
+    return this.http.put<Transaction>(`${this.transactionsApiUrl}/reject/${transactionId}`, {}, { headers });
+  }
+
 
   getUserTransactions(): Observable<Transaction[]> {
     const headers = this.getToken();
     return this.http.get<Transaction[]>(`${this.transactionsApiUrl}/user-transactions`, { headers });
   }
 
+
+  getAllTransactions(): Observable<Transaction[]> {
+    const headers = this.getToken();
+    return this.http.get<Transaction[]>(`${this.transactionsApiUrl}/all`, { headers });
+  }
 
 
 }

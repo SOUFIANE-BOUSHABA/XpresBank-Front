@@ -9,6 +9,7 @@ import {SelectTypeComponent} from './userViews/transactions/create/formulaire/se
 import { CreditRequestsUserComponent} from './userViews/credit-requests/read/read.component';
 import {CreditRequestFormComponent} from './userViews/credit-requests/create/formulaire/form.component';
 import {CreditRequestDoneComponent} from './userViews/credit-requests/create/done/done.component';
+import {ManageTransactionsComponent} from './transactions/manage/manage.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {CreditRequestDoneComponent} from './userViews/credit-requests/create/don
     SelectTypeComponent,
     CreditRequestsUserComponent,
     CreditRequestFormComponent,
-    CreditRequestDoneComponent
+    CreditRequestDoneComponent,
+    ManageTransactionsComponent
   ],
   imports: [
     FormsModule,
