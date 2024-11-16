@@ -22,18 +22,23 @@ export class AuthService {
 
 
 
-  login(credentials: { username: string, password: string }): Observable<string> {
-    return this.httpClient.post(`${this.apiUrl}/login`, credentials, { responseType: 'text' }).pipe(
-      tap((response: string) => {
-        localStorage.setItem('token', response);
-      })
-    );
+  login(credentials: { username: string, password: string }): Observable<any> {
+    return this.httpClient.post<{ token: string, role: string, username: string }>(`${this.apiUrl}/login`, credentials)
+      .pipe(
+        tap((response: { token: string, role: string, username: string }) => {
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('role', response.role);
+          localStorage.setItem('username', response.username);
+        })
+      );
   }
 
 
 
   logout(): void {
     localStorage.removeItem('token');
+    localStorage.removeItem('role');
+    localStorage.removeItem('username');
   }
 
   isAuthenticated(): boolean {
