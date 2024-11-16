@@ -57,4 +57,8 @@ export class AccountsUserComponent implements OnInit {
   }
 
 
+  calculateTotalBalance(): number {
+    return this.accounts.reduce((total, account) => total + account.balance, 0);
+  }
+
 }

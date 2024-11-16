@@ -1,5 +1,14 @@
 <div class="bg-white rounded-lg shadow-md p-6 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-bold mb-6">Accounts</h2>
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <h3 class="text-lg font-semibold text-gray-700">Total Balance</h3>
+      <p class="text-2xl font-bold text-indigo-600">
+        {{ calculateTotalBalance() | currency:'USD' }}
+      </p>
+    </div>
+
+  </div>
+
   <button class="bg-blue-500 text-white py-2 px-4 rounded mb-4" (click)="navigateToAddAccount()">Add Account</button>
   <table class="min-w-full bg-white rounded-lg">
     <thead>
@@ -13,7 +22,7 @@
     <tbody>
     <tr *ngFor="let account of accounts">
       <td class="py-2 px-4 border-b border-gray-200">{{ account.accountNumber }}</td>
-      <td class="py-2 px-4 border-b border-gray-200">{{ account.balance }} $ </td>
+      <td class="py-2 px-4 border-b border-gray-200">{{ account.balance | currency:'USD' }}</td>
       <td class="py-2 px-4 border-b border-gray-200">
         <span [ngClass]="{'bg-green-500 text-white': account.status === 'ACTIVE', 'bg-orange-500 text-white': account.status === 'BLOCKED'}" class="px-2 py-0.5 rounded-full text-xs">
           {{ account.status }}
