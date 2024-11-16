@@ -21,14 +21,19 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(){
-    this.authService.login(this.credentials).subscribe(()=>{
-      this.router.navigate(['/dashboard/users']);
-    },
+  onSubmit() {
+    this.authService.login(this.credentials).subscribe(response => {
+        if (response.role === 'USER') {
+          this.router.navigate(['/dashboard/account-for-user']);
+        } else if (response.role === 'EMPLOYER') {
+          this.router.navigate(['/dashboard/manage-transactions']);
+        } else if (response.role === 'ADMIN') {
+          this.router.navigate(['/dashboard/users']);
+        }
+      },
       error => {
-        console.error('login error : ' , error);
-      }
-    );
+        console.error('login error:', error);
+      });
   }
 
 }
