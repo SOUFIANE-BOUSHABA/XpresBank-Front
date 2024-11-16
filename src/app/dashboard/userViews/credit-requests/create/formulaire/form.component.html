@@ -1,0 +1,54 @@
+<div class="flex flex-row items-center justify-center p-6 rounded bg-indigo-900 text-white">
+
+  <div class="flex-1 pl-8 rounded-lg  w-full max-w-lg">
+    <h2 class="text-3xl font-bold mb-6">Fill in the form.</h2>
+    <p class="mb-8 text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut optime, secundum naturam affectum esse possit.
+    </p>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="creditRequestForm" class="space-y-6">
+      <div class="flex space-x-4">
+        <div class="flex-1">
+          <label for="amount" class="block text-sm font-medium text-gray-400">Requested Amount</label>
+          <input type="number" id="amount" formControlName="amount"
+                 class="mt-1 block w-full rounded-md bg-indigo-800 focus:border-indigo-500 focus:bg-gray-800 focus:ring-0 text-gray-100 p-3" />
+        </div>
+      </div>
+
+      <div class="flex space-x-4">
+        <div class="flex-1">
+          <label for="interestRate" class="block text-sm font-medium text-gray-400">Interest Rate</label>
+          <input type="number" id="interestRate" formControlName="interestRate"
+                 class="mt-1 block w-full rounded-md bg-indigo-800 focus:border-indigo-500 focus:bg-gray-800 focus:ring-0 text-gray-100 p-3" />
+        </div>
+      </div>
+
+
+      <div class="flex space-x-4">
+        <div class="flex-1">
+          <label for="startDate" class="block text-sm font-medium text-gray-400">Start Date</label>
+          <input type="date" id="startDate" formControlName="startDate"
+                 class="mt-1 block w-full rounded-md bg-indigo-800  border-transparent focus:border-indigo-500 focus:bg-gray-800 focus:ring-0 text-gray-100 p-3" />
+        </div>
+
+        <div class="flex-1">
+          <label for="endDate" class="block text-sm font-medium text-gray-400">End Date</label>
+          <input type="date" id="endDate" formControlName="endDate"
+                 class="mt-1 block w-full rounded-md bg-indigo-800  border-transparent focus:border-indigo-500 focus:bg-gray-800 focus:ring-0 text-gray-100 p-3" />
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between mt-8">
+        <button type="button" class="text-indigo-400 hover:text-indigo-600" (click)="goBack()">
+          Previous
+        </button>
+        <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg">
+          Continue
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="flex-1">
+    <img src="/assets/images/form.png" alt="Credit request illustration" class="" />
+  </div>
+</div>
