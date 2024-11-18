@@ -20,7 +20,7 @@ export class SidebarComponent implements OnInit {
       this.isAdmin = true;
     } else if (role === 'USER') {
       this.isUser = true;
-    } else if (role === 'EMPLOYER') {
+    } else if (role === 'EMPLOYEE') {
       this.isEmployer = true;
     }
   }

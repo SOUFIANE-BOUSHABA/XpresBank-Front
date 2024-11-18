@@ -17,6 +17,7 @@ import {CreditRequestFormComponent} from './userViews/credit-requests/create/for
 import {SelectTypeComponent} from './userViews/transactions/create/formulaire/select-type.component';
 import {CreditRequestDoneComponent} from './userViews/credit-requests/create/done/done.component';
 import {ManageTransactionsComponent} from './transactions/manage/manage.component';
+import {StatisticsComponent} from './statistics/statistics.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,7 @@ const routes: Routes = [
       { path: 'credit-request-user/create/form', component: CreditRequestFormComponent },
       { path: 'credit-request-user/done', component: CreditRequestDoneComponent },
       { path: 'manage-transactions', component: ManageTransactionsComponent },
+      { path: 'statistic', component: StatisticsComponent },
 
 
 

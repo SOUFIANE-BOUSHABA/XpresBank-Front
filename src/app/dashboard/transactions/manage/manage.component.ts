@@ -32,17 +32,22 @@ export class ManageTransactionsComponent implements OnInit {
   }
 
   approveTransaction(transactionId: number): void {
+    if (!transactionId) {
+      console.error('Invalid Transaction ID:', transactionId);
+      return;
+    }
+
     this.transactionService.approveTransaction(transactionId).subscribe(
       () => {
-
+        console.log('Transaction approved successfully');
         this.getTransactions();
       },
       (error) => {
-        console.error('Error approving transaction', error);
-
+        console.error('Error approving transaction:', error);
       }
     );
   }
+
 
   rejectTransaction(transactionId: number): void {
     this.transactionService.rejectTransaction(transactionId).subscribe(

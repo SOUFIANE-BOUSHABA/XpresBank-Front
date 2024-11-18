@@ -10,6 +10,9 @@ import { CreditRequestsUserComponent} from './userViews/credit-requests/read/rea
 import {CreditRequestFormComponent} from './userViews/credit-requests/create/formulaire/form.component';
 import {CreditRequestDoneComponent} from './userViews/credit-requests/create/done/done.component';
 import {ManageTransactionsComponent} from './transactions/manage/manage.component';
+import {StatisticsComponent} from './statistics/statistics.component';
+import { NgChartsModule } from 'ng2-charts';
+
 
 
 @NgModule({
@@ -18,7 +21,8 @@ import {ManageTransactionsComponent} from './transactions/manage/manage.componen
     CreditRequestsUserComponent,
     CreditRequestFormComponent,
     CreditRequestDoneComponent,
-    ManageTransactionsComponent
+    ManageTransactionsComponent,
+    StatisticsComponent,
   ],
   imports: [
     FormsModule,
@@ -27,6 +31,7 @@ import {ManageTransactionsComponent} from './transactions/manage/manage.componen
     SidebarComponent,
     HeaderComponent,
     ReactiveFormsModule,
+    NgChartsModule ,
 
   ]
 })

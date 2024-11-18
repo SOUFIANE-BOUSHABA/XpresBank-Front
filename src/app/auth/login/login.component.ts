@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.credentials).subscribe(response => {
         if (response.role === 'USER') {
           this.router.navigate(['/dashboard/account-for-user']);
-        } else if (response.role === 'EMPLOYER') {
+        } else if (response.role === 'EMPLOYEE') {
           this.router.navigate(['/dashboard/manage-transactions']);
         } else if (response.role === 'ADMIN') {
           this.router.navigate(['/dashboard/users']);
